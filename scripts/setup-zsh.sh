@@ -46,8 +46,14 @@ install_oh_my_zsh() {
     log_info "Installing zsh first..."
     if command_exists brew; then
       brew install zsh
-    elif command_exists apt; then
-      sudo apt-get install -y zsh
+    elif command_exists apt-get; then
+      echo "✗ Automatic install via apt-get is disabled by policy"
+      echo "ℹ Please install zsh manually using your system package workflow"
+      return 1
+    else
+      echo "✗ zsh is not installed and no supported package manager was found"
+      echo "ℹ Please install zsh manually, then re-run this script"
+      return 1
     fi
   fi
 

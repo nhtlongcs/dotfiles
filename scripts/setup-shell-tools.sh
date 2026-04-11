@@ -23,6 +23,10 @@ log_error() {
   echo "✗ $1"
 }
 
+log_info() {
+  echo "ℹ $1"
+}
+
 command_exists() {
   command -v "$1" &> /dev/null
 }
@@ -43,9 +47,10 @@ install_shfmt() {
   if command_exists brew; then
     brew install shfmt
     log_success "shfmt installed via Homebrew"
-  elif command_exists apt; then
-    sudo apt-get install -y shfmt
-    log_success "shfmt installed via apt"
+  elif command_exists apt-get; then
+    log_error "Automatic install via apt-get is disabled by policy"
+    log_info "Please install shfmt manually using your system package workflow"
+    return 1
   else
     log_error "Please install shfmt manually: https://github.com/mvdan/sh"
     return 1
@@ -68,9 +73,10 @@ install_shellcheck() {
   if command_exists brew; then
     brew install shellcheck
     log_success "shellcheck installed via Homebrew"
-  elif command_exists apt; then
-    sudo apt-get install -y shellcheck
-    log_success "shellcheck installed via apt"
+  elif command_exists apt-get; then
+    log_error "Automatic install via apt-get is disabled by policy"
+    log_info "Please install shellcheck manually using your system package workflow"
+    return 1
   else
     log_error "Please install shellcheck manually: https://github.com/koalaman/shellcheck"
     return 1
@@ -93,12 +99,13 @@ install_starship() {
   if command_exists brew; then
     brew install starship
     log_success "starship installed via Homebrew"
-  elif command_exists apt; then
-    sudo apt-get install -y starship
-    log_success "starship installed via apt"
+  elif command_exists apt-get; then
+    log_error "Automatic install via apt-get is disabled by policy"
+    log_info "Please install starship manually using your system package workflow"
+    return 1
   else
     # Install from releases
-    curl -sS https://starship.rs/install.sh | sh
+    curl -sS https://starship.rs/install.sh | sh -s -- -b "$HOME/.local/bin"
     log_success "starship installed from releases"
   fi
 }
