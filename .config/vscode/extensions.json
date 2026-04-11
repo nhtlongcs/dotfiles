@@ -1,0 +1,31 @@
+{
+  "recommendations": [
+    // themes & icons
+    "antfu.icons-carbon",
+    "antfu.theme-vitesse",
+    "file-icons.file-icons",
+    "Catppuccin.catppuccin-vsc-icons",
+
+    // utils
+    "usernamehw.errorlens",
+    "streetsidesoftware.code-spell-checker",
+    
+    // copilot 
+    "GitHub.copilot",
+    
+    // js
+    "dbaeumer.vscode-eslint",
+    "Vue.volar",
+
+    // up to you
+    "eamodio.gitlens",
+    "EditorConfig.EditorConfig",
+    "github.vscode-github-actions",
+    "GitHub.vscode-pull-request-github",
+    "johnsoncodehk.vscode-tsconfig-helper",
+    "mpontus.tab-cycle",
+    "naumovs.color-highlight",
+    "WakaTime.vscode-wakatime",
+    "znck.grammarly"
+  ]
+}

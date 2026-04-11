@@ -109,3 +109,37 @@ just lint-shell
 - `shfmt` formats shell scripts with consistent style
 - `shellcheck` lints shell scripts for best practices
 - `starship` provides a cross-shell prompt
+
+## Use .config For App Configs
+
+This repo already keeps app configs in `.config/`:
+- Most of the files in `.config/` can be copied directly to '~/.config/' for app-level configs
+- `.config/config.ghostty`
+- `.config/.vscode/` (profile-level files like `settings.json`, `extensions.json`, snippets)
+
+### Ghostty
+
+Copy Ghostty config to:
+
+`$HOME/Library/Application\ Support/com.mitchellh.ghostty/config.ghostty`
+
+```bash
+mkdir -p "$HOME/Library/Application Support/com.mitchellh.ghostty"
+cp "$PWD/.config/config.ghostty" "$HOME/Library/Application Support/com.mitchellh.ghostty/config.ghostty"
+```
+
+### VS Code Profile
+
+Link your profile config directory to:
+
+`$HOME/Library/Application\ Support/Code/User/profiles/<profile ID>/`
+
+```bash
+PROFILE_ID="<profile ID>"
+
+cp "$PWD/.config/.vscode/*" \
+	"$HOME/Library/Application Support/Code/User/profiles/$PROFILE_ID/"
+```
+
+
+Replace `<profile ID>` with your actual profile folder name.
