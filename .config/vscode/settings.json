@@ -18,7 +18,7 @@
   "workbench.startupEditor": "newUntitledFile",
   "workbench.tree.expandMode": "singleClick",
   "workbench.tree.indent": 10,
-
+  
   // ========== Editor ========== 
   "debug.onTaskErrors": "debugAnyway",
   "diffEditor.ignoreTrimWhitespace": false,
@@ -87,7 +87,12 @@
   "window.title": "${rootName}", // this make tabs more readable
   "window.titleBarStyle": "custom",
   "extensions.autoUpdate": "onlyEnabledExtensions",
-
+  "apc.electron": {
+    "titleBarStyle": "hidden",
+    "trafficLightPosition": { "x": -100, "y": -100 } 
+  },
+  "window.commandCenter": false,
+  "workbench.layoutControl.enabled": false,
   // ========== Extension configs ========== 
   "emmet.showSuggestionsAsSnippets": true,
   "emmet.triggerExpansionOnTab": false,

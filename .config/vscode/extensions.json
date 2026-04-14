@@ -4,7 +4,6 @@
     "antfu.icons-carbon",
     "antfu.theme-vitesse",
     "file-icons.file-icons",
-    "Catppuccin.catppuccin-vsc-icons",
 
     // utils
     "usernamehw.errorlens",
@@ -16,6 +15,8 @@
     // js
     "dbaeumer.vscode-eslint",
     "Vue.volar",
+    // python
+    "tamasfe.even-better-toml",
 
     // up to you
     "eamodio.gitlens",
