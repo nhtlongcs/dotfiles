@@ -17,6 +17,7 @@
     "Vue.volar",
     // python
     "tamasfe.even-better-toml",
+    "meta.pyrefly",
 
     // up to you
     "eamodio.gitlens",
